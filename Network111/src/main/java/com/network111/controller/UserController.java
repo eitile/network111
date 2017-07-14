@@ -1,17 +1,18 @@
 package com.network111.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.network111.dto.UserDto;
-import com.network111.service.UserService;
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.network111.dto.UserDto;
+import com.network111.service.UserService;
 
-@Controller
+@RestController
 public class UserController {
 
     private ObjectMapper mapper = new ObjectMapper();
