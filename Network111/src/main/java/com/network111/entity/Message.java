@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 
-@Entity(name = "message")
+@Entity
 public class Message {
 
     @Column(name = "id")

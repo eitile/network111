@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigInteger;
 
-@Entity(name = "friend")
+@Entity
 public class Friend {
 
     @Column(name = "id")

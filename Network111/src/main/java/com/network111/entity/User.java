@@ -1,13 +1,19 @@
 package com.network111.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import java.math.BigInteger;
+import java.util.List;
 
-@Entity(name = "user")
+@Entity
 public class User {
 
     @Column(name = "id")
@@ -26,6 +32,13 @@ public class User {
 
     @Column(name = "photo")
     private String photo;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "friend", joinColumns = {
+            @JoinColumn(name = "user_id", nullable = false, updatable = false) },
+            inverseJoinColumns = { @JoinColumn(name = "friend_id",
+                    nullable = false, updatable = false) })
+    private List<User> friends;
 
     public BigInteger getId() {
         return id;
@@ -65,5 +78,13 @@ public class User {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public List<User> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(List<User> friends) {
+        this.friends = friends;
     }
 }
