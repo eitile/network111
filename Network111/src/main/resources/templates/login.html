@@ -5,17 +5,16 @@
     <title>Login</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-    <script type="text/javascript" src="js_dispatcher.js"></script>
+    <script src="js_dispatcher.js"></script>
 </head>
 <body>
-    <form>
-        <input name="login">
-        <input name="password">
-        <button type="button" onclick="sendLoginInfo()">OK</button>
-    </form>
+<form class="loginForm" onsubmit="sendLoginInfo()">
+    <input name="login" id="login">
+    <input name="password" id="password">
+    <input type="submit" value="OK">
+</form>
 
-    <h4 th:text="${user.login}"></h4>
-    <h4 th:text="${user.password}"></h4>
-    <h4 th:text="${user.photo}"></h4>
+<h4 th:text="${user.login}"></h4>
+<h4 th:text="${user.password}"></h4>
 </body>
 </html>
