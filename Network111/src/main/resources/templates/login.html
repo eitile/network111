@@ -6,12 +6,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="js_dispatcher.js"></script>
+    <script src="enter_key_press_handler.js"></script>
 </head>
 <body>
-<form class="loginForm" onsubmit="sendLoginInfo()">
+<form  id="loginForm" class="loginForm" onkeypress="return handleKeyPress(event)">
     <input name="login" id="login">
     <input name="password" id="password">
-    <input type="submit" value="OK">
+    <input type="button" id="submitButton" value="OK" onclick="sendLoginInfo()">
 </form>
 
 <h4 th:text="${user.login}"></h4>

@@ -10,4 +10,5 @@ function sendLoginInfo() {
           dataType: "json",
           contentType : "application/json; charset=UTF-8"
         });
+     document.getElementById("loginForm").reset();
     }
